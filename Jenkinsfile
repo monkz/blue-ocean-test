@@ -32,25 +32,25 @@ pipeline {
       }
     }
     stage("Confirm") {
-//	when {
-//		branch: 'production'
-//	}
+	when {
+		branch 'deploy/production'
+        }
 	steps {
 		echo "Notify about readyness to deploy"
 		input message: "Confirm?"
 		milestone 2
 	}
     }
-//#    stage("Deploy") {
-//#      when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
-//#      steps {
-//#        milestone 3
-//#        input message: "Proceed?"
-//#        milestone 4
-//#
-//#        echo "deploying"
-//#      }
-//#    }
+    stage("Deploy") {
+      when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
+      steps {
+        milestone 3
+        input message: "Proceed?"
+        milestone 4
+
+        echo "deploying"
+      }
+    }
     stage("Generate reports") {
       steps {
         echo "Collect logs"
