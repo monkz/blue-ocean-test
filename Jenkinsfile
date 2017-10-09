@@ -31,24 +31,24 @@ pipeline {
         echo "upload to artefact cache"
       }
     }
-    stage("Confirm") {
-      when { branch: 'deploy/production' }
-      steps {
-        echo "notify about readyness to deploy"
-        input message: "Confirm?"
-        milestone 2
-      }
-    }
-    stage("Deploy") {
-      when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
-      steps {
-        milestone 3
-        input message: "Proceed?"
-        milestone 4
-
-        echo "deploying"
-      }
-    }
+#    stage("Confirm") {
+#      when { branch: 'deploy/production' }
+#      steps {
+#        echo "notify about readyness to deploy"
+#        input message: "Confirm?"
+#        milestone 2
+#      }
+#    }
+#    stage("Deploy") {
+#      when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
+#      steps {
+#        milestone 3
+#        input message: "Proceed?"
+#        milestone 4
+#
+#        echo "deploying"
+#      }
+#    }
     stage("Generate reports") {
       steps {
         echo "Collect logs"
