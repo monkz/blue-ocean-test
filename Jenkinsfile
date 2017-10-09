@@ -34,7 +34,7 @@ pipeline {
     stage("Confirm") {
      when { branch: 'deploy/production' }
       steps {
-        echo "notify about readyness to deploy"
+        echo "Notify about readyness to deploy"
         input message: "Confirm?"
         milestone 2
       }
