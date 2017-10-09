@@ -32,12 +32,14 @@ pipeline {
       }
     }
     stage("Confirm") {
-     when { branch: 'deploy/production' }
-      steps {
-        echo "Notify about readyness to deploy"
-        input message: "Confirm?"
-        milestone 2
-      }
+	when {
+		branch: 'production'
+	}
+	steps {
+		echo "Notify about readyness to deploy"
+		input message: "Confirm?"
+		milestone 2
+	}
     }
 //#    stage("Deploy") {
 //#      when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
