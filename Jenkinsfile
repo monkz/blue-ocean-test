@@ -38,18 +38,19 @@ pipeline {
 	steps {
 		milestone 2
 		lock(resource: 'staging-server', inversePrecedence: true) {
+			milestone 3
 			echo "Notify about readyness to deploy"
 			input message: "Confirm?"
 		}
-	milestone 3
+		milestone 4
 	}
     }
     stage("Deploy") {
       when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
       steps {
-        milestone 3
+        milestone 5
         input message: "Proceed?"
-        milestone 4
+        milestone 6
 
         echo "deploying"
       }
