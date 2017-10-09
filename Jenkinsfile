@@ -36,6 +36,7 @@ pipeline {
 		branch 'deploy/production'
         }
 	steps {
+		milestone 1
 		echo "Notify about readyness to deploy"
 		input message: "Confirm?"
 		milestone 2
