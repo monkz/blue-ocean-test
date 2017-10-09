@@ -31,7 +31,6 @@ pipeline {
         echo "upload to artefact cache"
       }
     }
-	milestone 1
     stage("Confirm") {
 	when {
 		branch 'deploy/production'
@@ -42,9 +41,9 @@ pipeline {
 			echo "Notify about readyness to deploy"
 			input message: "Confirm?"
 		}
+	milestone 3
 	}
     }
-	milestone 3
     stage("Deploy") {
       when { anyOf { branch 'deploy/production'; branch 'deploy/staging' } }
       steps {
