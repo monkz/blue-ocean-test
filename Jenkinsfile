@@ -10,7 +10,7 @@ pipeline {
     }
     stage("Check artefact cache") {
       steps {
-        echo "Check cache or check rebuild!"
+        echo "iCheck cache or check rebuild!"
       }
     }
     stage("Integrate") {
