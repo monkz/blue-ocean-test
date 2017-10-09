@@ -32,9 +32,9 @@ pipeline {
       }
     }
     stage("Confirm") {
-	when {
-		branch: 'production'
-	}
+//	when {
+//		branch: 'production'
+//	}
 	steps {
 		echo "Notify about readyness to deploy"
 		input message: "Confirm?"
