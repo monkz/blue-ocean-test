@@ -39,7 +39,7 @@ pipeline {
       }
       steps {
         milestone 2
-        @library('de.monkz.jenkins-shared-libs@master').cancelOlderBuildsAfterMilestone()
+        cancelOlderBuildsAfterMilestone()
         echo 'Notify about readyness to deploy'
         input 'Confirm?'
         milestone 4
