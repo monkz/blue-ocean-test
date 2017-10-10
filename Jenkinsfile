@@ -39,6 +39,7 @@ pipeline {
       }
       steps {
         milestone 2
+	sh 'env'
         cancelOlderBuildsAfterMilestone()
         echo 'Notify about readyness to deploy'
         input 'Confirm?'
