@@ -51,10 +51,6 @@ pipeline {
         echo 'Notify about readyness to deploy'
         input 'Confirm?'
         milestone 4
-        node(label: 'any') {
-          sh 'echo subnode'
-        }
-        
       }
     }
     stage('Deploy') {
