@@ -1,4 +1,4 @@
-@Library('de.monkz.jenkins-shared-libs') _
+@Library('de.monkz.jenkins-shared-libs@master') _
 
 pipeline {
   agent none
