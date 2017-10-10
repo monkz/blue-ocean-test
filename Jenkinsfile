@@ -1,3 +1,5 @@
+@Library('de.monkz.jenkins-shared-libs') _
+
 pipeline {
   agent none
   stages {
