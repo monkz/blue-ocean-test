@@ -51,7 +51,7 @@ pipeline {
         echo 'Notify about readyness to deploy'
         input 'Confirm?'
         milestone 4
-        node(label: 'srlive') {
+        node(label: 'any') {
           sh 'echo subnode'
         }
         
