@@ -1,5 +1,3 @@
-@Library('de.monkz.jenkins-shared-libs@master') _
-
 pipeline {
   agent none
   stages {
@@ -39,7 +37,7 @@ pipeline {
       }
       steps {
         milestone 2
-        cancelOlderBuildsAfterMilestone
+        library('de.monkz.jenkins-shared-libs@master').cancelOlderBuildsAfterMilestone()
         echo 'Notify about readyness to deploy'
         input 'Confirm?'
         milestone 4
