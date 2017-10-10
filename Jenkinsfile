@@ -1,7 +1,7 @@
 @Library('de.monkz.jenkins-shared-libs@master') _
 
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Prepare Environment') {
       steps {
