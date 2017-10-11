@@ -24,7 +24,7 @@ pipeline {
       steps {
         lock(resource: 'selenium-cluster') {
           echo 'testtesttest'
-	  sleep 10
+	  sleep 20
         }
         
       }
@@ -41,7 +41,9 @@ pipeline {
         branch 'deploy/production'
       }
       steps {
-        milestone 2
+	milestone 2
+	sleep 30
+        milestone 3
 	sh '/usr/bin/env'
         cancelOlderBuildsAfterMilestone()
         echo 'Notify about readyness to deploy'
