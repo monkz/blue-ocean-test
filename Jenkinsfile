@@ -24,6 +24,7 @@ pipeline {
       steps {
         lock(resource: 'selenium-cluster') {
           echo 'testtesttest'
+	  sleep 10
         }
         
       }
@@ -32,6 +33,7 @@ pipeline {
       steps {
 	milestone 1
         echo 'upload to artefact cache'
+	sleep 10
       }
     }
     stage('Confirm') {
