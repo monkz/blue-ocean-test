@@ -30,6 +30,7 @@ pipeline {
     }
     stage('Populate artefact cache') {
       steps {
+	milestone 1
         echo 'upload to artefact cache'
       }
     }
